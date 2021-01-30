@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flight Booking App</title>
+    <!-- Font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!--Header and Menu Section-->
+    <header class="container">
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a class="active" href="#">Sign Up</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!--Booking Section-->
+    <main id="main" class="main-content container">
+      <div class="booking-form">
+        <h3>Book Your Flight</h3>
+        <div class="input-group">
+          <label for="">Flying From</label>
+          <input
+            id="flying-from"
+            class="inp-style"
+            type="text"
+            name=""
+            placeholder="Dhaka, Bangladesh"
+          />
+        </div>
+        <div class="input-group">
+          <label for="">Flying To</label>
+          <input
+            id="flying-to"
+            class="inp-style"
+            type="text"
+            name=""
+            placeholder="New York, United States"
+          />
+        </div>
+        <div class="inputs">
+          <div class="input-group">
+            <label for="">Departure</label>
+            <input id="departure" class="inp-style" type="date" name="" />
+          </div>
+          <div class="input-group">
+            <label for="">Return</label>
+            <input id="return" class="inp-style" type="date" name="" />
+          </div>
+        </div>
+        <div class="input-group f-class">
+          <div>
+            <label for="">First Class ($150)</label>
+            <input
+              id="first-class-count"
+              class="inp-style inp-width"
+              type="number"
+              name=""
+              value="1"
+            />
+          </div>
+          <div class="plus-minus-btn">
+            <button
+              onclick=" handleTicketsCount(true, 'first-class-count');"
+              class="btn"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+            <button
+              onclick="handleTicketsCount(false, 'first-class-count')"
+              class="btn"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="input-group f-class">
+          <div>
+            <label for="">Economy ($100)</label>
+            <input
+              id="economy-class-count"
+              class="inp-style inp-width"
+              type="number"
+              name=""
+              value="1"
+            />
+          </div>
+          <div class="plus-minus-btn">
+            <button
+              onclick="handleTicketsCount(true, 'economy-class-count');"
+              class="btn"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+            <button
+              onclick="handleTicketsCount(false, 'economy-class-count');"
+              class="btn"
+            >
+              <i class="fas fa-minus"></i>
+            </button>
+          </div>
+        </div>
+        <div class="calculations">
+          <div class="amount">
+            <div class="left">
+              <p>Subtotal</p>
+            </div>
+            <div class="right">
+              <p>$ <span id="total-cost">250</span></p>
+            </div>
+          </div>
+
+          <div class="amount">
+            <div class="left">
+              <p>Charge 10% VAT</p>
+            </div>
+            <div class="right">
+              <p>$ <span id="tax">25</span></p>
+            </div>
+          </div>
+          <hr />
+          <div class="amount total">
+            <div class="left">
+              <h4>Total</h4>
+            </div>
+            <div class="right">
+              <p>$ <span id="grand-total-cost">275</span></p>
+            </div>
+          </div>
+        </div>
+        <button id="book-now" class="btn-style">Book Now</button>
+      </div>
+      <div class="booking-content">
+        <h1>
+          discover <br />
+          around the world
+        </h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicingelit. Provident
+          voluptatibus quam fuga laborumalias veniam libero autem quasi maxime
+          ullam vero nama imi dolor, architecto ab facilis eaque deserunt nobise
+          voluptatibus quam
+        </p>
+      </div>
+    </main>
+
+    <!--Thank You-->
+    <section id="confirm-section" class="confirm">
+      <div class="wrap">
+        <div class="confirm-header">
+          <h1>Thank You for Booking our Airline Ticket</h1>
+        </div>
+        <div class="confirm-body">
+          <p>All about your Ticket</p>
+          <table cellspacing="0" class="confirm-table">
+            <tr>
+              <th>Flying From</th>
+              <td id="table-flying-from"></td>
+              <th>Flying To</th>
+              <td id="table-flying-to"></td>
+            </tr>
+            <tr>
+              <th>Departure</th>
+              <td id="table-departure"></td>
+              <th>Return</th>
+              <td id="table-return"></td>
+            </tr>
+            <tr>
+              <th>SubTotal</th>
+              <td>$ <span id="table-total"></span></td>
+              <th>Charge 10% VAT</th>
+              <td>$ <span id="table-tax"></span></td>
+            </tr>
+            <tr>
+              <th>Total Cost</th>
+              <td colspan="3">$ <span id="table-grand-total"></span></td>
+            </tr>
+          </table>
+          <p>Have a good journey</p>
+        </div>
+      </div>
+    </section>
+    <!-- scripts  -->
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
